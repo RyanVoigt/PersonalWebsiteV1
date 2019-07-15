@@ -351,3 +351,24 @@ body{overflow-x:hidden}
     color:#fff
 }
 .config-panel .close .fa{color:#fff}
+
+@keyframes fly-in-left-animation{
+    0% {transform:  translate(-500px,0px) }
+    100%   {transform:  translate(0px,0px)  }
+  }
+  @keyframes fly-in-right-animation{
+    0% {transform:  translate(500px,0px) }
+    100%   {transform:  translate(0px,0px)  }
+  }
+  @keyframes fly-in-bottom-animation{
+    0% { transform:  translate(0px,500px) }
+    100%   {transform:  translate(0px,0px)  }
+  }
+  @keyframes fly-in-top-animation{
+    0% { transform:  translate(0px,-500px) }
+    100%   {transform:  translate(0px,0px)  }
+  }
+  @keyframes fade-in-animation{
+    0% { opacity: 0;}
+    100%   { opacity: 1}
+  }
