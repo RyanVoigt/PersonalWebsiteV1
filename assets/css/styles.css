@@ -360,16 +360,6 @@ body{overflow-x:hidden}
     background: #e0e0e0;
     display: inline-block;
   }
-  .social-list-buttons{
-    width: 32px;
-    height: 32px;
-    padding-top: 5px;
-    display: inline-block;
-    text-align: center;
-    border-radius: 50%;
-    transition: all 0.4s ease-in-out;
-    background-color: #fff;
-  }
   .filler{
     height: 100%;
     visibility: hidden;
