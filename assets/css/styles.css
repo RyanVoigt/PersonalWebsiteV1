@@ -30,7 +30,7 @@ h1,h2,h3,h4,h5,h6{color:#292929;font-weight:bold}
 .btn.focus{box-shadow:none !important}
 .btn-primary{color:#fff}
 .form-control{padding-top:0.875rem;padding-bottom:0.875rem;height:2.75rem;border-color:#c2c2c2}
-.theme-bg-light{background:#fafafa !important}
+.theme-bg-light{background:#f5f5f5 !important}
 .theme-bg-dark{background:#223142 !important}
 .header{
     position:fixed;
@@ -352,20 +352,45 @@ body{overflow-x:hidden}
 }
 .config-panel .close .fa{color:#fff}
 
+.progress-bar{
+    position: relative;
+    height: 16px;
+    width: 100%;
+    border-radius: 50px;
+    background: #e0e0e0;
+    display: inline-block;
+  }
+  .filler{
+    height: 100%;
+    visibility: hidden;
+    border-radius: inherit;
+    animation-name: progression-bar-animation;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+  }
+  @keyframes progression-bar-animation{
+    0% {
+      visibility: visible;
+      width: 0%;
+  }
+  100% {
+      visibility: visible;
+      width: 100%;}
+  }
 @keyframes fly-in-left-animation{
-    0% {transform:  translate(-500px,0px) }
+    0% {transform:  translate(-1500px,0px) }
     100%   {transform:  translate(0px,0px)  }
   }
   @keyframes fly-in-right-animation{
-    0% {transform:  translate(500px,0px) }
+    0% {transform:  translate(1500px,0px) }
     100%   {transform:  translate(0px,0px)  }
   }
   @keyframes fly-in-bottom-animation{
-    0% { transform:  translate(0px,500px) }
+    0% { transform:  translate(0px,1000px) }
     100%   {transform:  translate(0px,0px)  }
   }
   @keyframes fly-in-top-animation{
-    0% { transform:  translate(0px,-500px) }
+    0% { transform:  translate(0px,-1000px) }
     100%   {transform:  translate(0px,0px)  }
   }
   @keyframes fade-in-animation{
