@@ -414,7 +414,23 @@ body{overflow-x:hidden}
       box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.16);
   }
   100% {
-      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);}
+      box-shadow: 0 0 0 20px rgba(71, 66, 66, 0);}
+  }
+
+  @keyframes fade{
+    0%{
+      opacity: 1;
+    }
+    70%{
+        opacity:1;
+    }
+    71%{
+      opacity: 0.5;
+    }
+    100%{
+      display: none;
+      opacity: 0;
+    }
   }
 
  .descslider{
@@ -732,3 +748,95 @@ body{overflow-x:hidden}
   80%, 99.9% {
     margin-top: 30%;
     margin-left: 80%; } }
+
+    @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,900,400italic,700italic,900italic);
+
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+
+
+#wrappercooltext {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80em;
+}
+
+#containercooltext {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1em;
+    width: 100%;
+}
+
+.trippytextanimation {
+    animation: text-shadow 1.5s ease-in-out infinite;
+    font-size: 300% !important;
+    font-weight: 900;
+    line-height: 1;
+    z-index:20;
+    color: #9f4ce7;
+    position: absolute;
+    padding-left: 50px; 
+    padding-top: 400px;
+}
+
+@keyframes text-shadow {
+    0% {  
+        transform: translateY(0);
+        text-shadow: 
+            0 0 0 #0c2ffb, 
+            0 0 0 #2cfcfd, 
+            0 0 0 #fb203b, 
+            0 0 0 #fefc4b;
+    }
+
+    20% {  
+        transform: translateY(-1em);
+        text-shadow: 
+            0 0.125em 0 #0c2ffb, 
+            0 0.25em 0 #2cfcfd, 
+            0 -0.125em 0 #fb203b, 
+            0 -0.25em 0 #fefc4b;
+    }
+
+    40% {  
+        transform: translateY(0.5em);
+        text-shadow: 
+            0 -0.0625em 0 #0c2ffb, 
+            0 -0.125em 0 #2cfcfd, 
+            0 0.0625em 0 #fb203b, 
+            0 0.125em 0 #fefc4b;
+    }
+    
+   60% {
+        transform: translateY(-0.25em);
+        text-shadow: 
+            0 0.03125em 0 #0c2ffb, 
+            0 0.0625em 0 #2cfcfd, 
+            0 -0.03125em 0 #fb203b, 
+            0 -0.0625em 0 #fefc4b;
+    }
+
+    80% {  
+        transform: translateY(0);
+        text-shadow: 
+            0 0 0 #0c2ffb, 
+            0 0 0 #2cfcfd, 
+            0 0 0 #fb203b, 
+            0 0 0 #fefc4b;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+}
