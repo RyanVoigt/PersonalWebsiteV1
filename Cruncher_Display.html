@@ -1,0 +1,185 @@
+
+<script src="jquery-3.4.1.min.js"></script>
+<style>
+
+.getbutton {
+	background-color: rgb(184, 184, 184); 
+	color: white;
+	border: 0px;
+	border-radius: 12px;
+	padding: 6px 12px;
+    font-size: 27px;
+	cursor: pointer;
+}
+	.readbutton {
+	background-color: rgb(103, 183, 220); 
+	color: white;
+	border: 0px;
+	border-radius: 12px;
+	padding: 6px 12px;
+    font-size: 27px;
+	cursor: pointer;
+}
+body { background-color: #30303d; color: #fff; }
+	#chartdiv {
+  	width: 100%;
+  	height: 500px;
+	}
+#files {
+   opacity: 0;
+   position: absolute;
+   z-index: -1;
+}
+ .statscards{
+	background-color: rgb(103, 183, 220); 
+	border-radius: 15px;
+	font-size: 50px;
+	padding: 15px;
+	text-align: center;
+    height: auto;
+    margin: 0 auto;
+	margin-top: 20px;
+    position: relative;
+ }
+ table {
+  width:100%;
+  margin: 0 auto;
+}
+table, th, td {
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+tr{
+	color: #30303d
+}
+table tr:nth-child(2) td:last-child {
+  border-radius: 0 15px 0 0 !important;
+}
+table tr:nth-child(2) td:first-child {
+	border-radius: 15px 0 0 0 !important;
+}
+table tr:last-child td:first-child {
+  border-radius: 0 0 0 15px !important;
+}
+table tr:last-child td:last-child {
+  border-radius: 0 0 15px 0 !important;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+table#t01 th {
+  background-color: rgb(220, 210, 103);
+  color: white;
+}
+
+@keyframes enterLeft {
+  0%   {right: 400px}
+  100%  {right: 0px}
+}
+@keyframes enterRight {
+  0%   {left: 400px}
+  100%  {left: 0px}
+}
+
+@keyframes fade {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div style = "font: 400 11px system-ui;">
+<div style = " padding: 10px; display: flex; justify-content: center">
+	<label class = "getbutton" for="files">Choose File</label>
+	<input class= "getbutton"  type="file" id="files" name="file" />
+</div>
+<span style = "display: flex; justify-content: center" class="readBytesButtons">
+	<button class= "readbutton" >Crunch Data</button>
+</span>
+
+<div id = "datastorage" style = "visibility: hidden;">
+
+<div style = "text-align: center; margin-bottom: 30px">
+<div id = "redcard" style = "display: inline-block; width: 27%;">
+	<div style = "background-color: rgb(220, 105, 103); margin-right: 15px;" class= "statscards" >
+		<div style = "text-align: center;"id="totalspent"></div>
+		<div style = "font-size: 22px;">Total Spent</div>
+	</div>
+</div>
+<div style = "display: inline-block; width: 17%" >
+	<div style = " background-color: rgb(128, 103, 220)" class= "statscards">
+		<div style = "text-align: center;"id="totalItemsBought"></div>
+		<div style = "font-size: 22px;">Total Items Purchased</div>
+	  </div>
+	</div>
+	<div id = "greencard" style = "display: inline-block; width: 27%" >
+	  <div style = "background-color: rgb(125, 220, 103); margin-left: 15px" class= "statscards">
+		<div style = "text-align: center;"id="totalSavedFromListPrice"></div>
+		<div style = "font-size: 22px;">Total Money Saved Off List Price</div>
+	  </div>
+	</div>
+</div>
+	<div style = " width: 70%; background-color: rgb(220, 210, 103)"class= "statscards">
+		<div style = "text-align: center;"id="mostExpensive"></div>
+		<div style = "font-size: 22px;">Most Expensive Item</div>
+		<table id="t01">
+			<tr>
+			  <th>ITEM</th>
+			  <th>PRICE</th> 
+			  <th>LINK</th>
+			</tr>
+			<tr>
+			  <td id="mostExpensiveItem1Name"></td>
+			  <td id="mostExpensiveItem1Price"></td>
+			  <td id="mostExpensiveItem1Link"></td>
+			</tr>
+			<tr>
+			  <td id="mostExpensiveItem2Name"></td>
+			  <td id="mostExpensiveItem2Price"></td>
+			  <td id="mostExpensiveItem2Link"></td>
+			</tr>
+			<tr>
+			  <td id="mostExpensiveItem3Name"></td>
+			  <td id="mostExpensiveItem3Price"></td>
+			  <td id="mostExpensiveItem3Link"></td>
+			</tr>
+		  </table>
+	</div>
+
+	<div style = "margin: 0 auto; width: 90%; justify-content: center" >
+		<div style = "font-weight: bold;padding-top: 30px; text-align: center;font-size: 40px;">Category Breakdown</div>
+		<div style = "font-size: 15px"id="chartdivpie"></div>
+	</div>
+
+	<div style = "margin: 0 auto; width: 95%; justify-content: center" >
+		<div style = "font-weight: bold;padding-top: 30px; text-align: center;font-size: 40px;">Monthly Spending</div>
+		<div id="chartdiv"></div>
+	</div>
+
+	<div style = "margin: 0 auto; width: 95%; height: 500px; justify-content: center" >
+		<div style = "font-weight: bold;padding-top: 30px; text-align: center;font-size: 40px;">Order Timeline</div>
+		<div style = "font-size: 9px" id="chartdivtime"></div>
+	</div>
+</div>
+	<!-- Resources -->
+	<script src="https://www.amcharts.com/lib/4/core.js"></script>
+	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/dark.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+	
+	<!-- Chart code -->
+	<script src="./Cruncher_Brains/cruncher_brains_bundle.js"></script>
+	
+	<!-- HTML -->
+
+
+</div>
+	
+
+  
