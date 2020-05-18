@@ -21,12 +21,19 @@
 	cursor: pointer;
 }
 .backbutton {
-	background-color: rgb(128, 103, 220); 
+	background-color: rgb(220, 210, 103);
 	color: white;
 	border: 0px;
 	border-radius: 8px;
 	padding: 6px 12px;
     font-size: 18px;
+	cursor: pointer;
+}
+.infobutton {
+	background-color: #30303d;
+	border-color: #30303d;
+	color: white;
+    font-size: 10px;
 	cursor: pointer;
 }
 body { background-color: #30303d; color: #fff; }
@@ -104,13 +111,18 @@ table#t01 th {
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <div style = "font: 400 11px system-ui;">
-<a href="index.html" style = "text-decoration: none; display: flex; justify-content: center" >
+<a href="index.html" style = "padding-bottom: 8px; text-decoration: none; display: flex; justify-content: center" >
 	<button class= "backbutton" >Back To Personal Website</button>
 </a>
-<div style = " padding: 10px; display: flex; justify-content: center">
+<span style = "padding-bottom: 3px; display: flex; justify-content: center" class="readBytesButtons">
+	<a href="https://github.com/RyanVoigt/AmazonCruncher#how-to-use" class= "infobutton" >What File Should I Use?</a>
+</span>
+
+<div style = "padding: 10px; padding-top: 0px; display: flex; justify-content: center">
 	<label class = "getbutton" for="files">Choose File</label>
 	<input class= "getbutton"  type="file" id="files" name="file" />
 </div>
+
 <span style = "display: flex; justify-content: center" class="readBytesButtons">
 	<button class= "readbutton" >Crunch Data</button>
 </span>
