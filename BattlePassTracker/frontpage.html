@@ -1,0 +1,149 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<head>
+    <style>     
+    .frontPageBody {
+      background-color: #282828;
+      color: white;
+      margin: 20px;
+      padding: 20px;
+    }
+    .column {
+        float: left;
+        padding: 0 10px;
+    }
+    .container{
+    margin: auto;
+    display:grid;
+    grid-template-columns: 48% 48%;
+    grid-row: auto auto;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    }
+    .box{
+        border-radius:10px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:40px;
+        font-family:sans-serif;
+    }
+    .centered {
+    position: absolute;  
+    font-weight: 700;
+    }
+    .container {
+    position: relative;
+    text-align: center;
+    color: white;
+    }
+    .no-spinners [type='number'] {
+    -moz-appearance:textfield;
+    }
+
+    .no-spinners::-webkit-outer-spin-button,
+    .no-spinners::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+    </style>  
+</head>
+
+<div id = "content" >
+<body class="frontPageBody">
+
+<div id = "frontpage" style = "display: block">
+    <a href="../index.html" style = "padding-bottom: 8px; text-decoration: none; display: flex; justify-content: center" >
+        <button style = "background-color: #4b4b4b;border-radius: 4px; color: white;">Back To Personal Website</button>
+    </a>
+<div style = "background-color: #3a3a3a; border-radius: 16px; width:70%; display: block; margin:auto">
+
+    
+    <div style = "margin: auto; background-color: #4b4b4b; border-radius: 16px 16px 0px 0px; margin-bottom: 30px">
+        <div style = "color: #E8E8E8; width: 100%; margin-top: 15px; display: inline-block;font-size: 40px; text-align: center; font-family: Arial, Helvetica, sans-serif; font-weight: 800"> BattlePass Tracker</div>
+        <div style = "color: #E8E8E8; width: 100%; margin-top: 5px; margin-bottom: 20px; display: inline-block;font-size: 18px; text-align: center; font-family: Arial, Helvetica, sans-serif; font-weight: 1000"> Select a game below to check your current progress in this seasons battlepass to see if you are on track or not</div>
+
+      </div>
+      <div style = "width: 88% ; display: block; margin:auto; padding-bottom: 50px;">
+        <div id = "valorant_card" class="container">
+            <div class="box">
+                <img style = "border-radius: 16px;cursor: pointer; height: 100%; width: 100%" src="images/valorantcard.png"></img>
+            </div>
+            <div class="box">
+                <img style = "opacity: 0.4; border-radius: 16px; height: 100%; width: 100%" src="images/fallguyscard.png"></img>
+                <div class="centered">Coming Soon</div>
+            </div>
+            <div class="box">
+                <img style = "opacity: 0.4; border-radius: 16px; height: 100%; width: 100%" src="images/fortnitecard.png"></img>
+                <div class="centered">Coming Soon</div>
+            </div>
+            <div class="box">
+                <img style = "opacity: 0.4; border-radius: 16px; height: 100%; width: 100%" src="images/warzonecard.png"></img>
+                <div class="centered">Coming Soon</div>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+      <div id = valorantdata style = "display:none">
+        <div style = "background-color: #3a3a3a; font-family: Arial, Helvetica, sans-serif; border-radius: 16px; width:90%; height:100%; display: block; margin:auto">
+            <div style = "color: #eeeeee; border-radius: 16px 16px 0px 0px; padding-top: 5px; padding-left: 20px; padding-bottom: 4px; background-color: #5a5a5a; display: block">
+                Battle Pass Level: <input class="no-spinners" style = "-webkit-appearance: none; color: #eeeeee; width: 40px; border-radius: 4px; background-color: #3a3a3a;margin-right: 15px; outline-color: black;"type="number" id="Level">
+                XP Left In Level: <input class="no-spinners" style = "-webkit-appearance: none; color: #eeeeee; width: 100px; border-radius: 4px; background-color: #3a3a3a; margin-right: 10px;outline-color: black;"type="number" id="XP">
+                <button style = "background-color: #adadad; outline-color: black" onclick="submitFunction()">Submit</button>
+            </div>
+            <div id = "dataID"; style = "display:none">
+            <div style = " width: 100%; display: inline-flex; float: left;">
+                <div style = " margin-left: 5%; margin-top: 35px; margin-bottom: 25px; width: 18.5%; height: 200px; background-color: #414141; border-radius: 16px">
+                    <div style = "width: 100%; height: 90px">
+                        <div id= "xpBehind"; style = "font-size: 4vw; text-align: center; margin-top: 30px">
+                            
+                        </div>
+                    </div>
+                    <div style = "font-size: 2vw; text-align: center; color: #b6b6b6">
+                        XP Behind
+                    </div>
+                </div>
+                <div style = "margin-left: 5%; margin-top: 35px; width: 18.5%; height: 200px; background-color: #414141; border-radius: 16px">
+                    <div style = "width: 100%; height: 90px">
+                        <div id= "daysBehind"; style = "font-size: 4vw; text-align: center; margin-top: 30px">
+                            
+                        </div>
+                    </div>
+                    <div style = "font-size: 2vw; text-align: center; color: #b6b6b6">
+                        Days Behind
+                    </div>
+                </div>
+                <div style = "margin-left: 5%; margin-top: 35px; width: 18.5%; height: 200px; background-color: #414141; border-radius: 16px">
+                    <div style = "width: 100%; height: 90px">
+                        <div id= "predictedLevel"; style = "font-size: 4vw; text-align: center; margin-top: 30px">
+                            
+                        </div>
+                    </div>
+                    <div style = "font-size: 2vw; text-align: center; color: #b6b6b6">
+                        Predicted Final Level
+                    </div>
+                </div>
+                <div style = "margin-left: 5%; margin-top: 35px; width: 18.5%; height: 200px; background-color: #414141; border-radius: 16px; margin-right: 5%;">
+                    <div style = "width: 100%; height: 90px">
+                        <div id= "percentageComplete"; style = "font-size: 4vw; text-align: center; margin-top: 30px">
+                            
+                        </div>
+                    </div>
+                    <div style = "font-size: 2vw; text-align: center; color: #b6b6b6">
+                        Percent Complete
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div style = "margin: auto; width: 65%; height: 25%;">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div> 
+            
+        </div>
+        </div>
+
+</body>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./js/valorantdata.js"></script>
