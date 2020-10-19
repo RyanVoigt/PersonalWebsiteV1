@@ -1,8 +1,8 @@
     
 //VALORANT ACT START AND END DATES
 
-var startDate = new Date("08/4/2020");
-var stopDate = new Date("10/13/2020"); 
+var startDate = new Date("10/13/2020");
+var stopDate = new Date("1/13/2021"); 
 
 document.getElementById("valorant_card").addEventListener("click", function(){
     var v = document.getElementById("frontpage");
@@ -13,10 +13,10 @@ document.getElementById("valorant_card").addEventListener("click", function(){
 });
 
 var rankXP = [3000,7000,12000,18000,25000,33000,42000,52000,63000,75000,88000,102000,117000,133000,150000,168000,187000,207000,228000,250000,273000,297000,322000,348000,375000,403000,432000,462000,493000,525000,558000,592000,627000,663000,700000,738000,777000,817000,858000,900000, 943000, 987000, 1032000, 1078000, 1125000, 1173000, 1222000, 1272000, 1323000, 1375000];
-var battlePassLevel;
-var battlePassXP;
+var currentBattlePassLevel;
+var currentBattlePassXP;
 var totalXP = 1375000;
-var totalDays = 63;
+var totalDays = 90;
 var currentDay = new Date(); 
 
 Date.prototype.addDays = function(days) {
@@ -49,29 +49,60 @@ function formatDate(date) {
     return [month, day, year].join('/');
 }
 
-function submitFunction() {
-    battlePassLevel = document.getElementById("Level").value;
-    battlePassXP = document.getElementById("XP").value;
-    console.log(formatDate(currentDay));
-    console.log();
+function convertFunction() {
+    let cost = 0;
+    let _points = document.getElementById("points").value;
 
+    while (_points >= 11000) {
+        cost += 99.99;
+        _points -= 11000;
+    }
+    while (_points >= 5350) {
+        cost += 49.99;
+        _points -= 5350;
+    }
+    while (_points >= 3650) {
+        cost += 34.99;
+        _points -= 3650;
+    }
+    while (_points >= 2050) {
+        cost += 19.99;
+        _points -= 2050;
+    }
+    while (_points >= 1000) {
+        cost += 9.99;
+        _points -= 1000;
+    }
+    while (_points >= 475) {
+        cost += 4.99;
+        _points -= 475;
+    }
+    if (_points > 0) {
+        cost += 4.99;
+    }
+
+    document.getElementById("dollars").value = "$" + cost;
+}
+
+function submitFunction() {
+    currentBattlePassLevel = document.getElementById("Level").value;
+    currentBattlePassXP = document.getElementById("XP").value;
     var currentDate = new Date(formatDate(currentDay));
-    
     // To calculate the time difference of two dates 
     var Difference_In_Time = currentDate.getTime() - startDate.getTime(); 
-      
     // To calculate the no. of days between two dates 
     var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24); 
+
     actRange = getDates(startDate, stopDate);
     var actdays = (stopDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24); 
 
     var idealSumXP = totalXP/actdays;
-    var currentXP = (rankXP[battlePassLevel] - battlePassXP);
+    var currentXP = (rankXP[currentBattlePassLevel - 1] - currentBattlePassXP);
     var expectedXP = 0;
-    var sumXP = (rankXP[battlePassLevel] - battlePassXP)/Difference_In_Days
-    
+    var sumXP = (rankXP[currentBattlePassLevel - 1] - currentBattlePassXP)/Difference_In_Days
     var idealDayXP = 0;
     var idealXP = [];
+    
     for(i = 0; i <= actdays; i++){
         idealXP.push(idealDayXP)
         idealDayXP += idealSumXP;
@@ -103,13 +134,30 @@ function submitFunction() {
             found = true;
         }
     }
-    
     var daysBehind = Math.round((expectedXP - currentXP)/sumXP);
     var totalXPBehind = Math.round((expectedXP - currentXP));
     var percentComplete = Math.floor(((currentXP/totalXP)*100));
+    var percentCompleteIdeal = Math.floor(((expectedXP/totalXP)*100));
     var numberOfSpikeRush = Math.floor((expectedXP - currentXP)/1000)+1;
-    document.getElementById('xpBehind').innerHTML = totalXPBehind;
-    document.getElementById('daysBehind').innerHTML = daysBehind;
+    document.getElementById('fillerID').style.width = percentComplete + '%';
+    document.getElementById('fillerID2').style.width = percentCompleteIdeal + '%';
+    console.log(percentCompleteIdeal)
+    if(totalXPBehind > 0){
+        document.getElementById('xpBehind').innerHTML = totalXPBehind;
+        document.getElementById('xpstatustext').innerHTML = "XP Behind";
+    }
+    else{
+        document.getElementById('xpstatustext').innerHTML = "XP Ahead";
+        document.getElementById('xpBehind').innerHTML = (totalXPBehind*-1);
+    }
+    if(daysBehind > 0){
+        document.getElementById('daysBehind').innerHTML = daysBehind;
+        document.getElementById('daystatustext').innerHTML = "Days Behind";
+    }
+    else{
+        document.getElementById('daystatustext').innerHTML = "Days Ahead";
+        document.getElementById('daysBehind').innerHTML = (daysBehind*-1);
+    }
     document.getElementById('predictedLevel').innerHTML = predictedFinalLevel;
     document.getElementById('percentageComplete').innerHTML = percentComplete + '%';
     var x = document.getElementById("dataID");
@@ -146,3 +194,4 @@ function submitFunction() {
     options: {}
 });
 }
+
