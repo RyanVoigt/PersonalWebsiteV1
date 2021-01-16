@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Self Watering Plant Pot</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <header class="header text-center" style = "background-color: #7d7d7d; background-image: none;">
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Ryan Voigt</a></h1>
+
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image" >
+
+					<div class="bio mb-3">Hi, my name is Ryan Voigt and I'm a Mechatronics Student. Welcome to my personal website!</a></div><!--//bio-->
+					<ul class="list-inline py-3 mx-auto">
+			            <li class="list-inline-item social-list-buttons"><a href="https://www.linkedin.com/in/ryan-voigt/"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+			            <li class="list-inline-item social-list-buttons"><a href="https://github.com/RyanVoigt/"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item social-list-buttons"><a href="https://www.linkedin.com/in/ryan-voigt/"><i class="fab fa-codepen fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr>
+				</div><!--//profile-section-->
+
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html" style="text-decoration: none;"><i class="fas fa-user fa-fw mr-2"></i>About Me <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="portfolio.html" style="text-decoration: none;"><i class="fas fa-folder-open fa-fw mr-2"></i>Portfolio</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="about.html" style="text-decoration: none;"><i class="fas fa-file-alt fa-fw mr-2"></i>Resume</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="selfwatering.html" style="text-decoration: none;"><i class="fas fa-seedling fa-fw mr-2"></i>Self-Watering Plant Pot</a>
+					</li>
+          			<li class="nav-item">
+						<a class="nav-link" href="Cruncher_Display.html" style="text-decoration: none;"><i class="fas fa-chart-bar fa-fw mr-2"></i>Amazon Cruncher</a>
+					</li>
+          			<li class="nav-item">
+						<a class="nav-link" href="https://spotiry.herokuapp.com/" style="text-decoration: none;"><i class="fas fa-music fa-fw mr-2"></i>Spotiry</a>
+					</li>
+		  <li class="nav-item">
+            <a class="nav-link" href="BattlePassTracker/battlepasstracker.html" style="text-decoration: none;"><i class="fas fa-chart-line fa-fw mr-2"></i>BattlePass Tracker</a>
+          </li>
+				</ul>
+
+				<div class="my-2 my-md-3">
+
+				    <a class="btn btn-primary" style = "display: none" href="blog-list.html"_blank">Get in Touch</a>
+
+				</div>
+			</div>
+		</nav>
+    </header>
+
+    <div class="main-wrapper">
+
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+          <div style = "margin-bottom: 50px">
+						<h2 class="title mb-2">Introduction</h2>
+                        <p style = "width: 100%; min-width: 600px;">I have a very large collection of plants and although I love them all the same, some of my favourites are the GreenHills Boxwood, Mini Jade, Juniper and Ficus Microcarpa. Growing up my mom worked at a greenhouse and she always brought home plants, eventually after a few years our house became a jungle and I gained a huge appreciation for plants.</br> </p>
+                        <img src="assets/images/boxwood.jpg"  style = "display: inline-block; width: 24%; margin-bottom: 5px" alt="image">
+                        <img src="assets/images/jade.jpg"  style = "display: inline-block; width: 24%; margin-bottom:5px" alt="image">
+                        <img src="assets/images/juniper.jpg"  style = "display: inline-block; width: 24%; margin-bottom: 5px" alt="image">
+                        <img src="assets/images/fiscus.jpg"  style = "display: inline-block; width: 24%; margin-bottom:5px" alt="image">
+                        <p style = "width: 100%; min-width: 600px;">Plants live and grow just like everything else, but just much slower and this I believe this is where people loose interest in them. You need to understand their needs and if you meet them, then slowly they will develop into a strong beautiful plant. This rules not only applys to plants but everything you come into contact with, if you are willing to give your time a resources to something it will flourish and become something greater than the effort you put in.</br> </p>
+					<div>
+					</div>
+          <div style = "margin-bottom: 50px">
+            <h2 class="title mb-2">Self-Watering Plant Pot</h2>
+            <p style = "width: 100%; min-width: 600px;">After several months of planning and development which will be explained later in this article. This pot is completely self sustaining (as long as its plugged into the wall, and you fill its tank every couple weeks) this pot comes with many features that I will take a deeper dive into later, but to list some:</br> </p>
+            <p style = "width: 100%; min-width: 600px;">- 2 Litre water tank that can be filled and drainend with an LED pannel that shows you the water level.</br> </p>
+            <p style = "width: 100%; min-width: 600px;">- Its own Wifi network you can connect to and set watering schedules.</br> </p>
+            <p style = "width: 100%; min-width: 600px;">- A soil moister sensor to track the moisture and water if it gets too dry.</br> </p>
+            <img src="assets/images/autoplantpot.jpg"  style = "display: inline-block; width: 49%; margin-bottom: 5px" alt="image">
+            <img src="assets/images/sideview.jpg"  style = "display: inline-block; width: 49%; margin-bottom:5px" alt="image">
+            <h2 class="title mb-2">Inspiration</h2>
+            <p style = "width: 100%; min-width: 600px;">As a Waterloo student I tend to be in a new place every 4 months, I'm like a travelling salesman but I'm not selling anything, and most of the time I'm losing money, but I'm getting a great eduation! The only part the really bothers me is having somebody take care of my plants if I have to travel far. Not only is this a lot of work for them, but there is a very high chance that not all my plants will make it because many of them are very picky and need special treatment to stay alive especially during the winter seasons. This inspired me to build a plant pot that could that allowed the plants to take care of themselves (with only a little help from others) This gave my plants a lot more independance and also gave me more freedom to travel around without having to worry too much about them </br> </p>
+            <div>
+          </div>
+				</div>
+          <div style = "margin-bottom: 50px">
+						<h2 class="title mb-2">Development</h2>
+						<p style = "width: 100%; min-width: 600px;">The first step to creating this project was brainstorming a design and also figuring out what micro controller I should be using, My goal was to reduce the cost as much as possible, if i ever wanted to build some for friends and family. I decided on the ESP32 board becasue it came with a wifi chip so I could control the board from my phone. I then created a list of parts that I needed which included:</br> </p>
+                        <ul>
+                        <li style = "width: 100%; min-width: 600px;">Breadboard</br> </li>
+                        <li style = "width: 100%; min-width: 600px;">Water Pump</br> </li>
+                        <li style = "width: 100%; min-width: 600px;">Water Level Sensor</br> </li>
+                        <li style = "width: 100%; min-width: 600px;">Soil Moisture Sensor</br> </li>
+                        <li style = "width: 100%; min-width: 600px;">LED's</br> </li>
+                        <li style = "width: 100%; min-width: 600px;">Real Time Clock</br> </li>
+                        <li style = "width: 100%; min-width: 600px;">Relay to control pump</br> </li>
+                        <li style = "width: 100%; min-width: 600px;">Water Tank</br> </li>
+                        </ul>
+                        <p style = "width: 100%; min-width: 600px;">I started by setting up the hardware and creating a simple program for the board that opened up a network that you could connect to and set variables from. The design I wanted the pot to be as small as possible because I wanted to maintain the bonsai aesthetic so I got a tank that was very short and long.</br> </p>
+                        <img src="assets/images/proto1.jpg"  style = "display: inline-block; width: 49%; margin-bottom: 5px" alt="image">
+                        <img src="assets/images/tank1.jpg"  style = "display: inline-block; width: 49%; margin-bottom: 5px" alt="image">
+                        <p style = "width: 100%; min-width: 600px;">Initially I created a program where the board opened up its own network and allowed you to type in the wifi name and password and it would then switch over to that network and you would be able to control it while on your normal wifi network. The issue with this was if you were to change your wifi password it would require you to re-upload the firmware because it stores the password in flash and there was no way for me to only wipe that specific variable from flash storage, and if I wanted to build one for family and friends I would need to bring it over and re-upload the firmware every time there wifi password or name changes, so I thought it out and figured the trade offs were not very good and that you only need to set up a watering schedule once so it makes sense for it to just have its own network.</p>
+                        <img src="assets/images/tankproto1.jpg"  style = "display: inline-block; width: 49%; margin-bottom: 5px" alt="image">
+                        <img src="assets/images/tankproto2.jpg"  style = "display: inline-block; width: 49%; margin-bottom: 5px" alt="image">
+                        <p style = "width: 100%; min-width: 600px;">Initally I didn't have a realtime clock and I was trying to figure out how I can trigger things periodically (every day) and because the program was running on a single thread I would not be able to do it because managing a wait and alos allowing other parts of the program to run would be veyr difficult so I opted towards using a reatime clock.</br> </p>
+                        <p style = "width: 100%; min-width: 600px;">A major issue I had was with the pins for my soil moisture sensor not working after troubleshooting for hours I found out that once the wifi network is created the sensor readings would break, I then tested the current on the pin so see what it was before and after the wifi network turned on and the pin would drop about 0.2A which is enough for the reading to be off because it is based of of the current in the sensor, I then figured out it was only the rail connecting the wifi chip that was effected to I switched the pin I was using to one on a different rail and it started working again.</br> </p>
+						<h2 class="title mb-2">Building Box and Assembly</h2>
+                        <p style = "width: 100%; min-width: 600px;">I wanted to make the box out of recycled wood, so I went and grabbed some old recycled skids and took them apart to use the boards for my box. because I wanted everything to be as small a possible fitting everything into to box would be a challenge. I designed how I wanted the box to look measured up the dimensions and started cutting</br> </p>
+                        <img src="assets/images/tankandbox.jpg"  style = "display: inline-block; width: 49%; margin-bottom: 5px" alt="image">
+                        <img src="assets/images/tankandbox2.jpg"  style = "display: inline-block; width: 27.5%; margin-bottom: 5px" alt="image">
+                        <p style = "width: 100%; min-width: 600px;">WaterProofing the tank and box was very difficult and because everything was such a tight squeeze I needed to follow a specific order of building to ensure everything was finished before it was closed off and I couldn't touch it again, I ended up seating up the box with caulking glue and then sealed the soil section with flex seal, the components just fit inside the box and I created a plexiglass window that I could slide out to reset the board and get to the electronics if I needed to fix something.</br> </p>
+                        <img src="assets/images/autoplantpot.jpg"  style = "display: inline-block; width: 49%; margin-bottom: 5px" alt="image">
+                        <img src="assets/images/sideview.jpg"  style = "display: inline-block; width: 49%; margin-bottom:5px" alt="image">
+
+				</header>
+					<script>
+					    /**
+					     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT
+					     *  THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR
+					     *  PLATFORM OR CMS.
+					     *
+					     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
+					     *  https://disqus.com/admin/universalcode/#configuration-variables
+					     */
+					    /*
+					    var disqus_config = function () {
+					        // Replace PAGE_URL with your page's canonical URL variable
+					        this.page.url = PAGE_URL;
+
+					        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					        this.page.identifier = PAGE_IDENTIFIER;
+					    };
+					    */
+
+					    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+					        var d = document, s = d.createElement('script');
+
+					        // IMPORTANT: Replace 3wmthemes with your forum shortname!
+					        s.src = 'https://3wmthemes.disqus.com/embed.js';
+
+					        s.setAttribute('data-timestamp', +new Date());
+					        (d.head || d.body).appendChild(s);
+					    })();
+					</script>
+					<noscript>
+					    Please enable JavaScript to view the
+					    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+					        comments powered by Disqus.
+					    </a>
+					</noscript>
+				</div><!--//blog-comments-section-->
+		    </div><!--//container-->
+	    </article>
+
+    </div><!--//main-wrapper-->
+
+    <!-- Javascript -->
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/blog.js"></script>
+
+
+</body>
+</html>
