@@ -21,11 +21,11 @@ body {font-size:16px;}
   </div>
   <div class="w3-bar-block">
     <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-DimGray"style="color: white">Home</a> 
-    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-DimGray" style="color: white">LogBook</a> 
-    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-DimGray" style="color: white">Technical Specs</a> 
-    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-DimGray" style="color: white">Design</a> 
-    <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-DimGray" style="color: white">Competitors</a> 
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-DimGray" style="color: white">Contact</a>
+    <a href="#logbook" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-DimGray" style="color: white">Build Blog</a> 
+    <!-- <a href="#techspec" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-DimGray" style="color: white">Technical Specs</a> -->
+    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-DimGray" style="color: white">Team</a> 
+    <!-- <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-DimGray" style="color: white">Competitors</a>  -->
+     <!--  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-DimGray" style="color: white">Contact</a>-->
   </div>
 </nav>
 
@@ -42,31 +42,60 @@ body {font-size:16px;}
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
   <div class="w3-container" style="margin-top:50px" id="">
     <h1 class="w3-jumbo"><b>What is Venti?</b></h1>
+    <p>Living with roommates usually causes disputes around living conditions each individual is comfortable with. As students residing in shared living spaces, we’ve had first-hand knowledge on this exact issue, especially concerning temperature settings. We wanted to find a solution to give people more agency over the individual temperatures within each room.</p>
+    <p>To achieve this, we’ve come up with a smart vent controller. This solution provides the capability of minutely tuning vents where installed to cater to each individual’s desired temperature. Our solution’s edge in comparison with similar solutions is the cheap cost for construction of such a device.</p>
+
     <h1 class="w3-xxxlarge w3-text-black"><b>Showcase.</b></h1>
     <hr style="width:50px;border:5px solid #4B853B;" class="w3-round">
+    <p>The entire Venti system is controlled by the central thermostat. With a ESP32 Wi-Fi wireless board, it is able to communicate with the user’s device and use software algorithms to optimize the performance of the system. 
+      Similar to a traditional thermostat, a LCD module with resistive touch is available for user changes. Finally, a 3D printed sleek enclosure is used to contain the electronics, display and buttons. A model render of the thermostat module can seen below.
+    </p>
     <img src="assets/images/module.png"  style = "display: inline-block; width: 25%; margin-bottom: 30px" alt="image">
     <ul style = "display: inline-block; width: 50%; min-width: 300px; vertical-align: top;">
       <li style = "margin-bottom: 10px">A model render of the thermostat module used to contain the electronics, display and buttons</li>
       <li style = "margin-bottom: 10px">The hub will get its IP from the router and set up a web server and deliver web pages to all connected devices under existing WiFi network.</li>
       <li style = "margin-bottom: 10px">You will be able interact with the web pages hosted by the board and control the temperature and vent status</li>
     </ul>
+    <p>The 4” x 10” supply vent is the most critical and complex component of the system, acting as a key point of control. A small ATmega328p microcontroller is utilized to communicate with other components, poll sensors within the vent and control the flow of air. 
+      The overall plastic structure of the supply vent would be produced using a 3D printer, with additional polishing for visual appeal.</p>
     <img src="assets/images/ventback.png"  style = "display: inline-block; width: 49%; margin-bottom:5px" alt="image">
     <ul style = "display: inline-block; width: 50%; min-width: 300px; vertical-align: top;">
-      <li style = "margin-bottom: 10px">The 4” x 10” supply vent is the most critical and complex component of the system, acting as a key point of control.</li>
-      <li style = "margin-bottom: 10px">To maintain control of the design, a small ATmega328p microcontroller is utilized to communicate with other components, poll sensors within the vent and control the flow of air. The overall plastic structure of the supply vent would be produced using a 3D printer, with additional polishing for visual appeal</li>
-
+      <li style = "margin-bottom: 10px">To power the supply vent, three rechargeable NiMH batteries can be used to provide a stable source of current at 3.6V. Due to the supply vents being one of the most power-intensive components of the system, the team came together to brainstorm novel solutions for a continuous supply of power. Using only NiMH batteries as a source of power would raise issues of maintenance as well as patentability. </li>
     </ul>
+    <p>To open and close the vent, a servo motor can be used to rotate the baffles within the vent and change the flow of air. 
+      To accomplish this, a high torque servo motor was specified with a torque of 1Nm. The motor would then connect to a series of gears, rotating the baffles to change the airflow of the supply vent. 
+      Each shaft would be kept frictionless using bushings. Electrically, driving this motor would require a 5V boost circuit and a peak current of 1.2A. Both the motor and all of the electronics are housed within the left opening. </p>
   </div>
   <!-- Header -->
-  <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h1 class="w3-jumbo"><b>LogBook</b></h1>
+  <div class="w3-container" style="margin-top:40px" id="logbook">
+    <h1 class="w3-jumbo"><b>Build Blog</b></h1>
     <hr style="width:50px;border:5px solid #4B853B;" class="w3-round">
     <h2>Venti Fin Controller</h2>
+    <p>This is a breadboard implementation of the vent control mechanism. It is controlled using an Arduino </p>
     <iframe width="750" height="430" src="https://www.youtube.com/embed/RlmM5NX6Bek" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <p>lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
+    <h2>Web Interface</h2>
+    <p>The hub’s web application will be the main access point for users to adjust their temperature preferences and visualize how their system has performed throughout the day. Below is a mock Figma interface of what the web application will look like on the user’s device.
+    </p>
+    <img src="assets/images/mockinter.png"  style = "display: inline-block; width: 50%; margin-bottom: 30px" alt="image">
+    <h2>Software Design Flow</h2>
+    <p>Below is the flow of setting up the hub and accessing its web app:</p>
+    <div style="margin-left: 60px">
+      <p>1)	Connect to Wifi network hosted by Hub</p>
+      <p>2)	Input your Wifi’s SSID and password</p>
+      <p>3)	The Hub will then connect to your network</p>
+      <p>4)	Input ID’s of vents into webapp and assign them room names</p>
+      <p>5)	Hub will send command to vents with those ID’s and establish a connection</p>
+    </div>
+      <p>After this setup the hub will be accessible from any device on the network through the router, which means the system will work even without an internet connection. Below shows an overview of what the communication topology would look like for the group’s specific system and where the user would be accessing the hub.</p>
+      <img src="assets/images/com.png"  style = "display: inline-block; width: 50%; margin-bottom: 30px" alt="image">
+      <p>A feature that the smart vent system will have that many others on the market are lacking is a proper back pressure measuring system. This will ensure that the pressure within your HVAC system does not go above the recommended back pressure which will help avoid any possible damage that closing multiple vents may cause the system. This calibration algorithm will follow steps similar to the ones below.</p>
+      <div style="margin-left: 60px">
+      <p>1) Calibrate by running through different vent configurations to see how it affects the pressure within your system</p>
+        <p>2) Predict average HVAC temperature required to meet desired room temperatures</p>
+        <p>3) Open and close the vents within pressure calibrations limits, attempting to achieve required room temperatures</p>
+      </div>
+      <img src="assets/images/cali.png"  style = "display: inline-block; width: 40%; margin-bottom: 30px" alt="image">
+      <p>This calibration method will allow the hub to have a total budget of how much it is allowed to close vents. Whenever a vent is shut slightly, it will take away from the budget, and when a vent is opened slightly it will add to the budget.</p>
   </div>
   
  <!--
@@ -95,7 +124,8 @@ body {font-size:16px;}
   </div>-->
 
   <!-- Services -->
-  <div class="w3-container" id="services" style="margin-top:75px">
+   <!--
+  <div class="w3-container" id="techspec" style="margin-top:40px">
     <h1 class="w3-jumbo"><b>Technical Specs</b></h1>
     <hr style="width:50px;border:5px solid #4B853B;" class="w3-round">
     <p>Here is a bunch of technical specs about the project</p>
@@ -104,53 +134,62 @@ body {font-size:16px;}
     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
   </div>
-  
+-->
   <!-- Designers -->
-  <div class="w3-container" id="designers" style="margin-top:75px">
-    <h1 class="w3-jumbo"><b>Design</b></h1>
+  <div class="w3-container" id="designers" style="margin-top:40px">
+    <h1 class="w3-jumbo"><b>Team</b></h1>
     <hr style="width:50px;border:5px solid #4B853B;" class="w3-round">
     <p>The best team in the world.</p>
-    <p>We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <p>We are a group of 4th year mechantronics engineering students from the univeristy of waterloo with a passion for software and hardware development. We are current developing the Venti
+    A temperature management solution for people living in building with generic HVAC system. The Venti with give archaic single temp HVAC system the ability to heat and cool your house on a room by room basis.
     </p>
   </div>
 
   <!-- The Team -->
-  <div class="w3-row-padding w3-grayscale">
-    <div class="w3-col m4 w3-margin-bottom">
+  <div class="outer">
+    <div class="inner">
       <div class="w3-light-grey">
-        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <img src="assets/images/ryan.jpg" alt="John" style="width:100%">
         <div class="w3-container">
-          <h3>John Doe</h3>
-          <p class="w3-opacity">CEO & Founder</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <h3>Ryan Voigt</h3>
+          <p class="w3-opacity">Software</p>
+          <p>Developed network system, device communication integration, and web interfaces. </p>
         </div>
       </div>
     </div>
-    <div class="w3-col m4 w3-margin-bottom">
+    <div class="inner">
       <div class="w3-light-grey">
-        <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
+        <img src="assets/images/brian.jpg" alt="John" style="width:100%">
         <div class="w3-container">
-          <h3>Jane Doe</h3>
-          <p class="w3-opacity">Designer</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <h3>Brian Chang</h3>
+          <p class="w3-opacity">Software</p>
+          <p>Developing temperature managment system, polling systems and firmware</p>
         </div>
       </div>
     </div>
-    <div class="w3-col m4 w3-margin-bottom">
+    <div class="inner">
       <div class="w3-light-grey">
-        <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
+        <img src="assets/images/benhu.jpeg" alt="Jane" style="width:100%">
         <div class="w3-container">
-          <h3>Mike Ross</h3>
-          <p class="w3-opacity">Architect</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <h3>Ben Hu</h3>
+          <p class="w3-opacity">Electrical</p>
+          <p>Developing PCB, hardware designer, electrical and battery research, thermal control </p>
+        </div>
+      </div>
+    </div>
+    <div class="inner">
+      <div class="w3-light-grey">
+        <img src="assets/images/felix.jpeg" alt="Mike" style="width:100%">
+        <div class="w3-container">
+          <h3>Felix Lawson</h3>
+          <p class="w3-opacity">Mechanical</p>
+          <p>Designing models of system, solidworks and autocad development, QA testing</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Packages / Pricing Tables -->
+  <!-- Packages / Pricing Tables 
   <div class="w3-container" id="packages" style="margin-top:75px">
     <h1 class="w3-jumbo"><b>Competitors</b></h1>
     <hr style="width:50px;border:5px solid #4B853B;" class="w3-round">
@@ -161,13 +200,13 @@ body {font-size:16px;}
     <div class="w3-half w3-margin-bottom">
       <ul class="w3-ul w3-light-grey w3-center">
         <li class="w3-dark-grey w3-xlarge w3-padding-32">Other Vents</li>
-        <li class="w3-padding-16">Not Good</li>
+        <li class="w3-padding-16">Poor Quality</li>
         <li class="w3-padding-16">Slow</li>
         <li class="w3-padding-16">Bad Interface</li>
         <li class="w3-padding-16">Low Battery</li>
         <li class="w3-padding-16">Subscriptions</li>
         <li class="w3-padding-16">
-          <h2>$ 199</h2>
+          <h2>$ 129 Average</h2>
           <span class="w3-opacity">per vent</span>
         </li>
       </ul>
@@ -182,18 +221,18 @@ body {font-size:16px;}
         <li class="w3-padding-16">Affordable</li>
         <li class="w3-padding-16">Adjustable</li>
         <li class="w3-padding-16">
-          <h2>$ 100</h2>
+          <h2>Price Pending</h2>
           <span class="w3-opacity">per vent</span>
         </li>
       </ul>
     </div>
   </div>
-  
-  <!-- Contact -->
+  -->
+  <!-- Contact 
   <div class="w3-container" id="contact" style="margin-top:75px">
     <h1 class="w3-jumbo"><b>Contact</b></h1>
     <hr style="width:50px;border:5px solid #4B853B;" class="w3-round">
-    <p>Interested in Venti? Fill out the form and fill me in with the details :)</p>
+    <p>Interested in Venti? Contact us below</p>
     <form action="/action_page.php" target="_blank">
       <div class="w3-section">
         <label>Name</label>
@@ -210,6 +249,7 @@ body {font-size:16px;}
       <button type="submit" class="w3-button w3-block w3-padding-large w3-margin-bottom" style="background-color:#4B853B; color: white">Send Message</button>
     </form>  
   </div>
+-->
 
 <!-- End page content -->
 </div>
@@ -240,3 +280,19 @@ function onClick(element) {
 
 </body>
 </html>
+
+<style>
+.outer {display: flex; flex-wrap: wrap;}
+
+.inner {
+  flex: 1;
+  margin: 0 5px;
+}
+
+@media (max-width: 480px) {
+  .inner {
+    flex: 0 1 calc(50% - 10px); /* - 2 x 5px left & right margin */
+    margin-bottom: 10px;
+  }
+}
+  </style>
