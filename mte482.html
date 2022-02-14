@@ -58,7 +58,7 @@ body {font-size:16px;}
     </ul>
     <p>The 4” x 10” supply vent is the most critical and complex component of the system, acting as a key point of control. A small ATmega328p microcontroller is utilized to communicate with other components, poll sensors within the vent and control the flow of air. 
       The overall plastic structure of the supply vent would be produced using a 3D printer, with additional polishing for visual appeal.</p>
-    <img src="assets/images/ventback.png"  style = "display: inline-block; width: 49%; margin-bottom:5px" alt="image">
+    <img src="assets/images/ventiPic1.jpeg"  style = "display: inline-block; width: 49%; margin-bottom:5px" alt="image">
     <ul style = "display: inline-block; width: 50%; min-width: 300px; vertical-align: top;">
       <li style = "margin-bottom: 10px">To power the supply vent, three rechargeable NiMH batteries can be used to provide a stable source of current at 3.6V. Due to the supply vents being one of the most power-intensive components of the system, the team came together to brainstorm novel solutions for a continuous supply of power. Using only NiMH batteries as a source of power would raise issues of maintenance as well as patentability. </li>
     </ul>
@@ -69,7 +69,19 @@ body {font-size:16px;}
   <!-- Header -->
   <div class="w3-container" style="margin-top:40px" id="logbook">
     <h1 class="w3-jumbo"><b>Build Blog</b></h1>
-    <hr style="width:50px;border:5px solid #4B853B;" class="w3-round">
+    <h2>Venti 3D Model of Supply Register and Laser Cut Schematic</h2>
+    <p>We Recently finished designing our next iteration of our supply register. Some of the renders can be seen above! The design uses laser cut parts to form a 3D puzzle-like structure that is extremely sturdy! The vent includes a compartment for housing the electronics (motor, radio, sensors) and other compartments for housing our thermoelectric generators (TEGs).
+    </p>
+    <img src="assets/images/ventiPic1.jpeg"  style = "display: inline-block; width: 40%;" alt="image">
+    <img src="assets/images/ventiPic2.jpeg"  style = "display: inline-block; width: 40%;" alt="image">
+    <img src="assets/images/ventiPic3.jpeg"  style = "display: inline-block; width: 40%; margin-bottom: 30px" alt="image">
+    <img src="assets/images/ventiLaser.png"  style = "display: inline-block; width: 40%; margin-bottom: 30px;" alt="image">
+
+    <h2>Venti Network Setup and LORA Sensor Communication</h2>
+    <p>This is a demo of how the venti system connects to your router and then is able to be accessed from any device on the network. This is also a demo of LORA communication between and arduino and ESP32 transfering an reading sensor information </p>
+    <iframe width="420" height="750" src="https://www.youtube.com/embed/pF2y0dcBUOQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div style="width: 7%; display: inline-block"></div>
+    <iframe width="420" height="750" src="https://www.youtube.com/embed/0-_5bw6zABQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <h2>Venti Fin Controller</h2>
     <p>This is a breadboard implementation of the vent control mechanism. It is controlled using an Arduino </p>
     <iframe width="750" height="430" src="https://www.youtube.com/embed/RlmM5NX6Bek" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
